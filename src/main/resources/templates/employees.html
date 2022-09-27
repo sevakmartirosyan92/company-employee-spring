@@ -17,6 +17,7 @@
         <th>position</th>
         <th>profilePic</th>
         <th>company</th>
+        <th>delete</th>
     </tr>
     <tr th:each="employee:${employees}"  >
         <td th:text="${employee.id}"></td>
@@ -28,6 +29,8 @@
         <td th:text="${employee.position}"></td>
         <td th:text="${employee.profilePic}">#</td>
         <td th:text="${employee.getCompany eq null ? 'exception!' : employee.getCompany.name }"></td>
+        <td><a  th:href="@{/employees/delete(id=${employee.id})}">Delete</a></td>
+
     </tr>
 </table>
 
